@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <title> Message Board </title>
+    <h1> Message Board </h1><br>
+    <input id="name" type="text" placeholder="Your name"><br>
+    <textarea id="message" placeholder="Your message"></textarea><br>
+    <button onclick="addMessage()">Submit</button>
+    <h2>Messages:</h2>
+    <div id="messages"></div>
+    
+    <script>
+        function addMessage() {
+            let name = document.getElementById("name").value
+            let message = document.getElementById("message").value
+
+            let newMessage = "<p><b>" + name + ":</b>" + message + "</p>"
+            document.getElementById("messages").innerHTML += newMessage
+        }
+    </script>
+
+
+</body>
+
+</html>
