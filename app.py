@@ -3,12 +3,6 @@ from flask import Flask, request
 app = Flask(__name__)
 messages = []
 
-# --- new part of the code ---
-@app.after_request
-def add_ngrok_header(responce):
-    responce.headers['ngrok-skip-browser-warning']='true'
-    return responce
-
 @app.route("/")
 def home():
     html = "<h1>Message Board</h1>"
