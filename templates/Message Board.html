@@ -1,0 +1,40 @@
+<!-- TODO 防止空白提交 -->
+<!-- TODO 提交后清空输入框 -->
+<!-- TODO CSS字幕 -->
+<!-- TODO 数据库 -->
+<!-- TODO 回复 -->
+<!-- TODO 深色/浅色模式切换 -->
+
+<!DOCTYPE html>
+<html>
+
+<body style = "background-color:#282c36">
+    <title > Message Board </title>
+    <h1 align = "center"; style = "color:aliceblue"> Message Board </h1><br>
+    <div>
+        <marquee> 
+            <span style = "color:white">Welcome to the Message Board! </span> <span style = "color:rgb(219, 10, 10)">Please speak politely... </span> 
+        </marquee>
+    <div>
+    <input id="name" type="text" placeholder="Your name" align = "center"><br>
+    <textarea id="message" placeholder="Your message" align = "center"></textarea><br>
+    <button onclick="addMessage()" align = "center">Submit</button>
+    <h2 style = "color:aliceblue">Messages:</h2>
+    <div id="messages"></div>
+    
+    <script>
+        function addMessage() {
+            let name = document.getElementById("name").value
+            let message = document.getElementById("message").value
+
+            let newMessage = `<p style = 'color: white'><b> ${name} </b>: ${message} </p>`
+            document.getElementById("messages").innerHTML += newMessage
+
+            console.log(document.getElementById("messages").innerHTML)
+        }
+    </script>
+
+
+</body>
+
+</html>
