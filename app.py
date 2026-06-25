@@ -1,24 +1,11 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 messages = []
 
 @app.route("/")
 def home():
-    html = "<h1>Message Board</h1>"
-
-    for m in messages:
-        html += "<p><b>" + m["name"] + ":</b>" + m["text"] + "</p>"
-
-    html += '''
-    <form method="post" action="/submit">
-        <input name="name" placeholder="Your Name"><br>
-        <textarea name="message" placeholder="Your message"></textarea><br>
-        <button type="submit">Submit</button>
-    </form>
-    '''
-
-    return html
+    return render_template("Message Board.html")
 
 @app.route("/submit", methods=["POST"])
 def submit():
